@@ -30,7 +30,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="members.html">
             <i class="fa-solid fa-users"></i>
             Members
           </a>
@@ -58,7 +58,7 @@
     <div class="main-content">
       <h1>Welcome Admin</h1>
       <p>sunday contibution dashboard</p>
-      <input type="text" placeholder="search member" />
+      <input type="text" placeholder="search member" id="search-member" />
       <div class="divs">
         <div class="totalMonth">
           <i class="fa-solid fa-hand-holding-dollar"></i>
@@ -80,7 +80,7 @@
       </div>
       <div class="main">
         <h2>monthly Contibution Overview</h2>
-        <button>ADD CONTIBUTION</button>
+        <button id="btn">ADD CONTIBUTION</button>
       </div>
       <div class="tables">
         <table class="custom-table">
@@ -120,6 +120,15 @@
           </tbody>
         </table>
       </div>
+      <div id="modal">
+        <h2>Add Contribution</h2>
+        <div class="details">
+          <input type="text" placeholder="Member Name" id="details" />
+          <input type="number" placeholder="Contribution" id="details" />
+        </div>
+        <button id="save">Save</button>
+      </div>
     </div>
+    <script src="js/script.js"></script>
   </body>
 </html>

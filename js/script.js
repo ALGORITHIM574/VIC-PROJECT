@@ -46,10 +46,22 @@ if (saveBtn && modal) {
 
 const memberBtn = document.querySelector("#btn-2");
 const modal2 = document.querySelector("#modal-2");
+const overlay = document.querySelector("#overlay");
 
 if (memberBtn && modal2) {
   memberBtn.addEventListener("click", function () {
     console.log("member added"); //for debugging
     modal2.style.display = "block";
+    if (overlay) {
+      overlay.style.display = "block";
+    }
+  });
+}
+const saveBtn2 = document.querySelector("#btn-2");
+
+if (saveBtn2 && modal2) {
+  saveBtn.addEventListener("click", function () {
+    console.log("saved"); //for debugging
+    modal2.style.display = "none";
   });
 }

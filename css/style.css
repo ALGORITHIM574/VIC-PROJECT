@@ -320,31 +320,56 @@ button:hover {
   /* THIS IS FOR THE MEMEMBER FORM /LIST */
 }
 .tables-2 {
+  width: 95%;
+  height: auto;
+  margin: 30px auto;
   background: white;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .members-table {
   width: 100%;
+  height: auto;
   border-collapse: collapse;
+  overflow: hidden;
+}
+
+.members-table thead tr {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
 }
 
 .members-table th {
-  background-color: #2563eb;
   color: white;
-  padding: 15px;
+  padding: 18px;
   text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .members-table td {
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
+  padding: 16px 18px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.members-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.members-table tbody tr:nth-child(even) {
+  background: #f8fafc;
 }
 
 .members-table tbody tr:hover {
-  background-color: #f1f5f9;
+  background: #eff6ff;
+  transform: scale(1.01);
+}
+
+.members-table tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .main-member {
@@ -377,8 +402,17 @@ button:hover {
   transform: scale(1.05);
 }
 
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+}
+
 #modal-2 {
   width: 450px;
+  height: auto;
   display: none;
   background: white;
   border-radius: 20px;
@@ -404,7 +438,7 @@ button:hover {
 }
 
 .details-2 input {
-  height: 45px;
+  height: auto;
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #d1d5db;

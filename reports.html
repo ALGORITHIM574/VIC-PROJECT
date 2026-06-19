@@ -13,45 +13,50 @@
           <h1>Reports & Analytics</h1>
           <p>Monitor church contributions and member participation</p>
         </div>
+      </div>
+
 
         <div class="report-actions">
-          <button>Export Report</button>
-          <button>Print Report</button>
+          <button id="report">Export Report</button>
+          <button id="report">Print Report</button>
         </div>
-      </div>
-
-      <!-- Statistics Cards -->
-      <div class="report-cards">
-        <div class="report-card">
+  <div class="main-content">
+      <div class="divs">
+        <div class="totalMonth">
           <i class="fa-solid fa-hand-holding-dollar"></i>
-          <h3>KES 120,000</h3>
-          <p>Total Contributions</p>
+          <p>Total This month<br /></p>
+          <h4>KES12,000</h4>
         </div>
-
-        <div class="report-card">
-          <i class="fa-solid fa-users"></i>
-          <h3>150</h3>
-          <p>Total Members</p>
+        <div class="totalMember">
+          <i class="fa-solid fa-users"></i><br />
+          Total Members<br />230
         </div>
-
-        <div class="report-card">
-          <i class="fa-solid fa-calendar-days"></i>
-          <h3>4</h3>
-          <p>Sundays Recorded</p>
+        <div class="sunday">
+          <i class="fa-solid fa-calendar-days"></i><br />
+          Sunday This month<br />4
         </div>
-
-        <div class="report-card">
-          <i class="fa-solid fa-trophy"></i>
-          <h3>John Doe</h3>
-          <p>Highest Contributor</p>
+        <div class="HCB">
+          <i class="fa-solid fa-trophy"></i> <br />Highest Contributor<br />KES
+          8,000
         </div>
       </div>
-
       <!-- Monthly Overview -->
       <div class="chart-section">
         <h2>Monthly Contribution Overview</h2>
+        <div class="chart-type">
+            <button onclick="setChartType('bar')">Bars</button>
+            <button onclick="setChartType('doughnut')">Doughnut</button>
+            <button onclick="setChartType('line')">Line</button>
+            <button onclick="setChartType('polarArea')">PolarArea</button>
+            <button onclick="setChartType('radar')">Radar</button>
 
-        <div class="chart-placeholder">Chart Goes Here</div>
+        </div>
+
+        <div class="chart-placeholder">
+            <div>
+  <canvas id="myChart"></canvas>
+</div>
+        </div>
       </div>
 
       <!-- Contribution Summary -->
@@ -129,7 +134,8 @@
           </tbody>
         </table>
       </div>
-      ```
     </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/report.js"></script>
 </html>

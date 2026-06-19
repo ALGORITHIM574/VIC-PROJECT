@@ -1,170 +1,119 @@
-/* =========================
-REPORTS PAGE
-========================= */
-
-.reports-page {
-  width: 100%;
+* {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  text-align: center;
 }
-
-/* =========================
-HEADER
-========================= */
 
 .report-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-  gap: 20px;
-  flex-wrap: wrap;
+  font-weight: bolder;
+  color: blue;
+  transition: transform 0.2s ease;
 }
-
-.report-header h1 {
-  color: #111827;
-  font-size: 30px;
-  margin-bottom: 6px;
+.report-header:hover {
+  transform: scale(1.3);
 }
-
-.report-header p {
-  color: #6b7280;
-}
-
-/* =========================
-ACTION BUTTONS
-========================= */
-
 .report-actions {
   display: flex;
-  gap: 12px;
+  flex-direction: row;
+  gap: 20px;
 }
-
-.report-actions button {
+#report {
   background: #2563eb;
-  color: white;
-  border: none;
-  padding: 12px 18px;
+  color: aliceblue;
+  padding: 12px 20px;
+  font-size: 16px;
   border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s;
+  transition: 0.2s;
+  border: none;
 }
-
-.report-actions button:hover {
-  background: #1d4ed8;
+#report:hover {
+  background: #124be7;
+  transform: scale(1.05);
 }
-
-/* =========================
-REPORT CARDS
-========================= */
-
-.report-cards {
+.main-content {
+  width: 80%;
+  height: auto;
+  margin-top: 2%;
+  margin-left: 15%;
+  border-radius: 20px;
+}
+.divs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 30px;
+  gap: 15px;
+  margin: 20px 0;
 }
 
-.report-card {
+.totalMonth,
+.totalMember,
+.sunday,
+.HCB {
   background: white;
-  border-radius: 18px;
-  padding: 25px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transition: 0.3s;
-  position: relative;
-  overflow: hidden;
+  padding: 5px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  text-align: center;
+  font-weight: 600;
 }
 
-.report-card:hover {
+.totalMonth:hover,
+.totalMember:hover,
+.sunday:hover,
+.HCB:hover {
   transform: translateY(-5px);
 }
 
-.report-card i {
-  font-size: 28px;
-  margin-bottom: 15px;
+/* COLORS (SOFT PROFESSIONAL) */
+.totalMonth {
+  border-left: 5px solid #2563eb;
 }
-
-.report-card h3 {
-  font-size: 28px;
-  margin-bottom: 8px;
-  color: #111827;
+.totalMember {
+  border-left: 5px solid #16a34a;
 }
-
-.report-card p {
-  color: #6b7280;
+.sunday {
+  border-left: 5px solid #f97316;
 }
-
-/* CARD COLORS */
-
-.report-card:nth-child(1) {
-  border-left: 6px solid #2563eb;
+.HCB {
+  border-left: 5px solid #9333ea;
 }
-
-.report-card:nth-child(1) i {
-  color: #2563eb;
-}
-
-.report-card:nth-child(2) {
-  border-left: 6px solid #16a34a;
-}
-
-.report-card:nth-child(2) i {
-  color: #16a34a;
-}
-
-.report-card:nth-child(3) {
-  border-left: 6px solid #f97316;
-}
-
-.report-card:nth-child(3) i {
-  color: #f97316;
-}
-
-.report-card:nth-child(4) {
-  border-left: 6px solid #9333ea;
-}
-
-.report-card:nth-child(4) i {
-  color: #9333ea;
-}
-
-/* =========================
-CHART SECTION
-========================= */
-
-.chart-section {
-  background: white;
-  padding: 25px;
-  border-radius: 18px;
-  margin-bottom: 25px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-}
-
 .chart-section h2 {
-  margin-bottom: 20px;
-  color: #111827;
+  font-weight: bolder;
+  color: blue;
+  transition: transform 0.2s ease;
+}
+.chart-section h2:hover {
+  transform: scale(1.3);
 }
 
 .chart-placeholder {
-  height: 350px;
-  border-radius: 15px;
-  border: 3px dashed #cbd5e1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #64748b;
-  font-size: 18px;
+  height: 500px;
+  margin-top: 30px;
+  background: #124be765;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  overflow-x: auto;
 }
 
-/* =========================
-SUMMARY SECTION
-========================= */
-
 .summary-section {
+  margin-top: 30px;
   background: white;
   padding: 25px;
-  border-radius: 18px;
-  margin-bottom: 25px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 }
 
 .summary-section h2 {
@@ -174,7 +123,7 @@ SUMMARY SECTION
 .summary-item {
   display: flex;
   justify-content: space-between;
-  padding: 14px 0;
+  padding: 15px 0;
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -182,15 +131,13 @@ SUMMARY SECTION
   border-bottom: none;
 }
 
-/* =========================
-TABLE SECTION
-========================= */
-
+/* table */
 .table-section {
+  margin-top: 30px;
   background: white;
   padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
   overflow-x: auto;
 }
 
@@ -201,17 +148,12 @@ TABLE SECTION
 .table-section table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 700px;
-}
-
-.table-section thead {
-  background: #2563eb;
 }
 
 .table-section th {
+  background: #2563eb;
   color: white;
   padding: 15px;
-  text-align: left;
 }
 
 .table-section td {
@@ -221,47 +163,4 @@ TABLE SECTION
 
 .table-section tbody tr:hover {
   background: #f8fafc;
-}
-
-/* =========================
-RESPONSIVE
-========================= */
-
-@media (max-width: 992px) {
-  .report-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .report-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .report-actions {
-    width: 100%;
-  }
-
-  .report-actions button {
-    flex: 1;
-  }
-
-  .report-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .chart-placeholder {
-    height: 250px;
-  }
-}
-
-@media (max-width: 480px) {
-  .report-header h1 {
-    font-size: 24px;
-  }
-
-  .report-card h3 {
-    font-size: 22px;
-  }
 }

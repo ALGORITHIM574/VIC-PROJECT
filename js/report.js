@@ -13,7 +13,8 @@ fetch("data.json") //this is callling the file
     createChart(data, "bar");
   });
 function setChartType(chartType) {
-  myChart.destory();
+  console.log(myChart);
+  myChart.destroy();
   createChart(jsonData, chartType);
 }
 function createChart(data, type) {
@@ -30,12 +31,16 @@ function createChart(data, type) {
       ],
     },
     options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-      // maintainAspectRatio: false,
+      responsive: true,
+      maintainAspectRatio: false,
+      scales:
+        type === "bar" || type === "line"
+          ? {
+              y: {
+                beginAtZero: true,
+              },
+            }
+          : {},
     },
   });
 }

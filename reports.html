@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/report.css" />
     <title>Report</title>
   </head>
@@ -15,47 +19,46 @@
         </div>
       </div>
 
-
-        <div class="report-actions">
-          <button id="report">Export Report</button>
-          <button id="report">Print Report</button>
-        </div>
-  <div class="main-content">
-      <div class="divs">
-        <div class="totalMonth">
-          <i class="fa-solid fa-hand-holding-dollar"></i>
-          <p>Total This month<br /></p>
-          <h4>KES12,000</h4>
-        </div>
-        <div class="totalMember">
-          <i class="fa-solid fa-users"></i><br />
-          Total Members<br />230
-        </div>
-        <div class="sunday">
-          <i class="fa-solid fa-calendar-days"></i><br />
-          Sunday This month<br />4
-        </div>
-        <div class="HCB">
-          <i class="fa-solid fa-trophy"></i> <br />Highest Contributor<br />KES
-          8,000
-        </div>
+      <div class="report-actions">
+        <button id="report">Export Report</button>
+        <button id="report">Print Report</button>
       </div>
-      <!-- Monthly Overview -->
-      <div class="chart-section">
-        <h2>Monthly Contribution Overview</h2>
-        <div class="chart-type">
+      <div class="main-content">
+        <div class="divs">
+          <div class="totalMonth">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <p>Total This month<br /></p>
+            <h4>KES12,000</h4>
+          </div>
+          <div class="totalMember">
+            <i class="fa-solid fa-users"></i><br />
+            Total Members<br />230
+          </div>
+          <div class="sunday">
+            <i class="fa-solid fa-calendar-days"></i><br />
+            Sunday This month<br />4
+          </div>
+          <div class="HCB">
+            <i class="fa-solid fa-trophy"></i> <br />Highest Contributor<br />KES
+            8,000
+          </div>
+        </div>
+        <!-- Monthly Overview -->
+        <div class="chart-section">
+          <h2>Monthly Contribution Overview</h2>
+          <div class="chart-type">
             <button onclick="setChartType('bar')">Bars</button>
             <button onclick="setChartType('doughnut')">Doughnut</button>
             <button onclick="setChartType('line')">Line</button>
+            <!-- will be removed -->
             <button onclick="setChartType('polarArea')">PolarArea</button>
             <button onclick="setChartType('radar')">Radar</button>
-
-        </div>
-
-        <div class="chart-placeholder">
+          </div>
+          <div class="chart-placeholder">
             <div>
-  <canvas id="myChart"></canvas>
-</div>
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -1,0 +1,21 @@
+# Dependency directories (if you use npm/yarn)
+node_modules/
+jspm_packages/
+
+# Environment variables and API keys (secrets)
+.env
+.env.local
+.env.development.local
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDE and Editor folders
+.vscode/
+.idea/
+
+# Build outputs (if using build tools like Vite, Webpack, or Sass)
+dist/
+build/
+.sass-cache/

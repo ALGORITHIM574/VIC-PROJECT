@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Add Meeting</title>
+
+    <link rel="stylesheet" href="css/add-meeting.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="form-container">
+      <div class="form-header">
+        <h1>
+          <i class="fa-solid fa-calendar-plus"></i>
+          Create New Meeting
+        </h1>
+
+        <p>Add church meeting details and minutes</p>
+      </div>
+
+      <form>
+        <label> Meeting Title </label>
+
+        <input type="text" placeholder="Example: Youth Committee Meeting" />
+
+        <label> Meeting Date </label>
+
+        <input type="date" />
+
+        <label> Location </label>
+
+        <input type="text" placeholder="Example: Main Church Hall" />
+
+        <label> Agenda </label>
+
+        <textarea placeholder="Write meeting agenda..."></textarea>
+
+        <label> Meeting Minutes </label>
+
+        <textarea placeholder="Write meeting minutes..."></textarea>
+
+        <button type="submit">
+          <i class="fa-solid fa-save"></i>
+
+          Save Meeting
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

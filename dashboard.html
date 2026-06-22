@@ -2,20 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
     <title>Church Dashboard</title>
+
     <link rel="stylesheet" href="css/style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
   </head>
+
   <body>
     <div class="sidebar">
       <div class="logo">
         <h2>VIC YOUTH CONTRIBUTION</h2>
+
         <p>Contribution System</p>
       </div>
+
       <ul class="menu">
         <li>
           <a href="dashboard.html">
@@ -23,71 +29,127 @@
             Dashboard
           </a>
         </li>
+
         <li>
           <a href="meetings.html">
             <i class="fa-solid fa-clipboard-list"></i>
             Meetings
           </a>
         </li>
+
         <li>
           <a href="members.html">
             <i class="fa-solid fa-users"></i>
             Members
           </a>
         </li>
+
         <li>
           <a href="reports.html">
             <i class="fa-solid fa-chart-column"></i>
             Reports
           </a>
         </li>
+
         <li>
           <a href="#">
             <i class="fa-solid fa-gear"></i>
             Settings
           </a>
         </li>
-        <li>
-          <a href="#">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            Logout
-          </a>
-        </li>
       </ul>
+
+      <button id="logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        Logout
+      </button>
     </div>
+
     <div class="main-content">
-      <h1>Welcome Admin</h1>
-      <p>sunday contibution dashboard</p>
-      <input type="text" placeholder="search member" id="search-member" />
+      <h2>
+        Welcome,
+        <span id="username"></span>
+      </h2>
+
+      <div id="admin-section">
+        <h3>Admin Panel</h3>
+
+        <button>Add Member</button>
+
+        <button>Manage Contributions</button>
+
+        <button>Manage Users</button>
+      </div>
+
+      <div id="secretary-section">
+        <h3>Secretary Panel</h3>
+
+        <button>Add Meeting</button>
+
+        <button>Upload Minutes</button>
+      </div>
+
+      <div id="member-section">
+        <h3>Member Area</h3>
+
+        <button>View Meetings</button>
+
+        <button>My Contributions</button>
+      </div>
+
+      <!-- <h1>Welcome Admin</h1>
+
+      <p>Sunday Contribution Dashboard</p> -->
+
+      <input type="text" placeholder="Search Member" id="search-member" />
+
       <div class="divs">
         <div class="totalMonth">
           <i class="fa-solid fa-hand-holding-dollar"></i>
-          <p>Total This month<br /></p>
-          <h4>KES12,000</h4>
+
+          <p>Total This Month</p>
+
+          <h4>KES 12,000</h4>
         </div>
+
         <div class="totalMember">
-          <i class="fa-solid fa-users"></i><br />
-          Total Members<br />230
+          <i class="fa-solid fa-users"></i>
+
+          <p>Total Members</p>
+
+          <h4>230</h4>
         </div>
+
         <div class="sunday">
-          <i class="fa-solid fa-calendar-days"></i><br />
-          Sunday This month<br />4
+          <i class="fa-solid fa-calendar-days"></i>
+
+          <p>Sunday This Month</p>
+
+          <h4>4</h4>
         </div>
+
         <div class="HCB">
-          <i class="fa-solid fa-trophy"></i> <br />Highest Contributor<br />KES
-          8,000
+          <i class="fa-solid fa-trophy"></i>
+
+          <p>Highest Contributor</p>
+
+          <h4>KES 8,000</h4>
         </div>
       </div>
+
       <div class="main">
-        <h2>monthly Contibution Overview</h2>
-        <button id="btn">ADD CONTIBUTION</button>
+        <h2>Monthly Contribution Overview</h2>
+
+        <button id="btn">ADD CONTRIBUTION</button>
       </div>
+
       <div class="tables">
         <table class="custom-table">
           <thead>
             <tr>
               <th>Id</th>
-              <th>Members Name</th>
+              <th>Member Name</th>
               <th>Sun1</th>
               <th>Sun2</th>
               <th>Sun3</th>
@@ -96,39 +158,50 @@
               <th>Action</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
               <td>1</td>
-              <td>jane Doe</td>
-              <td>ksh30</td>
-              <td>ksh30</td>
-              <td>ksh30</td>
-              <td>ksh30</td>
-              <td>ksh120</td>
+              <td>Jane Doe</td>
+              <td>KSH 30</td>
+              <td>KSH 30</td>
+              <td>KSH 30</td>
+              <td>KSH 30</td>
+              <td>KSH 120</td>
               <td></td>
             </tr>
+
             <tr>
               <td>2</td>
-              <td>john Doe</td>
-              <td>ksh30</td>
-              <td>ksh30</td>
-              <td>ksh30</td>
-              <td>ksh30</td>
-              <td>ksh120</td>
+              <td>John Doe</td>
+              <td>KSH 30</td>
+              <td>KSH 30</td>
+              <td>KSH 30</td>
+              <td>KSH 30</td>
+              <td>KSH 120</td>
               <td></td>
             </tr>
           </tbody>
         </table>
       </div>
+
       <div id="modal">
         <h2>Add Contribution</h2>
+
         <div class="details">
-          <input type="text" placeholder="Member Name" id="details" />
-          <input type="number" placeholder="Contribution" id="details" />
+          <input type="text" placeholder="Member Name" />
+
+          <input type="number" placeholder="Contribution" />
         </div>
+
         <button id="save">Save</button>
       </div>
     </div>
+
+    <script type="module" src="js/dashboard.js"></script>
+
+    <script type="module" src="js/logout.js"></script>
+
     <script src="js/script.js"></script>
   </body>
 </html>

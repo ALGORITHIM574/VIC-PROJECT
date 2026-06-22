@@ -554,6 +554,115 @@ button:hover {
     width: 100%;
   }
 }
+/* =========================
+   ROLE DASHBOARD PANELS
+========================= */
+
+#admin-section,
+#secretary-section,
+#member-section {
+  background: white;
+  margin: 25px 0;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border-left: 5px solid #2563eb;
+}
+
+#admin-section h3,
+#secretary-section h3,
+#member-section h3 {
+  color: #2563eb;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* ROLE BUTTON CONTAINER */
+
+#admin-section,
+#secretary-section,
+#member-section {
+  display: none;
+}
+
+/* WHEN JAVASCRIPT ACTIVATES IT */
+
+#admin-section[style*="block"],
+#secretary-section[style*="block"],
+#member-section[style*="block"] {
+  display: block;
+}
+
+/* ROLE BUTTONS */
+
+#admin-section button,
+#secretary-section button,
+#member-section button {
+  background: #2563eb;
+  color: white;
+  border: none;
+
+  padding: 12px 20px;
+
+  margin-right: 12px;
+  margin-bottom: 10px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+#admin-section button:hover,
+#secretary-section button:hover,
+#member-section button:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+}
+
+/* ADMIN DIFFERENT COLORS */
+
+#admin-section {
+  border-left-color: #9333ea;
+}
+
+#admin-section h3 {
+  color: #9333ea;
+}
+
+/* SECRETARY */
+
+#secretary-section {
+  border-left-color: #f59e0b;
+}
+
+#secretary-section h3 {
+  color: #f59e0b;
+}
+
+/* MEMBER */
+
+#member-section {
+  border-left-color: #16a34a;
+}
+
+#member-section h3 {
+  color: #16a34a;
+}
+
+/* MOBILE ROLE BUTTONS */
+
+@media (max-width: 600px) {
+  #admin-section button,
+  #secretary-section button,
+  #member-section button {
+    width: 100%;
+    margin-right: 0;
+  }
+}
 
 @media (min-width: 601px) and (max-width: 992px) {
   .divs {

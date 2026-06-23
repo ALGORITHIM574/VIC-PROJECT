@@ -189,19 +189,20 @@
         <h2>Add Contribution</h2>
 
         <div class="details">
-          <input type="text" placeholder="Member Name" />
+          <select id="member-select">
+            <option value="">Select Member</option>
+          </select>
 
-          <input type="number" placeholder="Contribution" />
+          <input type="number" id="amount" placeholder="Amount" />
         </div>
 
-        <button id="save">Save</button>
+        <button id="save-contribution">Save</button>
       </div>
     </div>
 
     <script type="module" src="js/dashboard.js"></script>
-
     <script type="module" src="js/logout.js"></script>
-
+    <script type="module" src="js/contribution.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

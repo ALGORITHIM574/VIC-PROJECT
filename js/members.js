@@ -3,11 +3,11 @@ import { supabase } from "./supabase.js";
 const tableBody = document.getElementById("members-body");
 
 const saveButton = document.getElementById("save");
-
+//USED TO REQUST DATA
 async function loadMembers() {
   const { data, error } = await supabase
     .from("members")
-    .select("*")
+    .select("*") //says give me all the column
     .order("created_at", { ascending: false });
 
   if (error) {

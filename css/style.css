@@ -228,7 +228,7 @@ button:hover {
    MODAL (MODERN POPUP)
 ========================= */
 #modal {
-  width: 420px;
+  width: 620px;
   max-width: 90%;
   display: none;
   background: white;
@@ -242,10 +242,10 @@ button:hover {
   z-index: 1000;
 }
 
-.details {
-  display: flex;
+/* .details {
+  /* display: flex;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 15px; 
 }
 
 .details input {
@@ -253,6 +253,42 @@ button:hover {
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #d1d5db;
+} */
+/* Target the outer main container div */
+div:has(> button) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+}
+
+/* Target the inner row div (the one containing the select option) */
+div:has(> select) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 448px;
+}
+
+/* Target the option selection bar */
+select {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  margin-right: 16px;
+  outline: none;
+}
+
+/* Target the text/amount span element next to the select */
+select + span {
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #1f2937;
 }
 
 /* =========================

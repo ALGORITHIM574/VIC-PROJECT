@@ -4,19 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Church Meetings</title>
+
     <link rel="stylesheet" href="css/meetings.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
   </head>
+
   <body>
     <div class="meetings-container">
       <header class="header">
         <div>
           <h1>
-            <i class="fa-solid fa-calendar-days"></i> Meetings & Announcements
+            <i class="fa-solid fa-calendar-days"></i>
+            Meetings & Announcements
           </h1>
+
           <p>Manage church meetings, minutes and announcements</p>
         </div>
 
@@ -32,24 +37,27 @@
       <section class="stats">
         <div class="stat-card">
           <i class="fa-solid fa-calendar"></i>
+
           <div>
-            <h3>24</h3>
+            <h3 id="total-meetings">0</h3>
             <p>Total Meetings</p>
           </div>
         </div>
 
         <div class="stat-card">
           <i class="fa-solid fa-clock"></i>
+
           <div>
-            <h3>5</h3>
+            <h3 id="upcoming-meetings">0</h3>
             <p>Upcoming</p>
           </div>
         </div>
 
         <div class="stat-card">
           <i class="fa-solid fa-file-lines"></i>
+
           <div>
-            <h3>18</h3>
+            <h3 id="minutes-uploaded">0</h3>
             <p>Minutes Uploaded</p>
           </div>
         </div>
@@ -57,50 +65,14 @@
 
       <div class="search-section">
         <i class="fa-solid fa-search"></i>
-        <input type="text" placeholder="Search meetings..." />
+
+        <input type="text" id="search" placeholder="Search meetings..." />
       </div>
 
-      <div class="meeting-card">
-        <div class="card-header">
-          <div>
-            <h2>Youth Committee Meeting</h2>
-            <span class="status">Upcoming</span>
-          </div>
-
-          <div class="date">
-            <i class="fa-solid fa-calendar"></i>
-            10 Oct 2026
-          </div>
-        </div>
-
-        <div class="meeting-content">
-          <h4>Agenda</h4>
-
-          <ul>
-            <li>Contribution review</li>
-            <li>Fundraising plans</li>
-            <li>Community outreach</li>
-            <li>Youth conference preparation</li>
-          </ul>
-        </div>
-
-        <div class="meeting-footer">
-          <button class="view-btn">
-            <i class="fa-solid fa-eye"></i>
-            View
-          </button>
-
-          <button class="edit-btn">
-            <i class="fa-solid fa-pen"></i>
-            Edit
-          </button>
-
-          <button class="delete-btn">
-            <i class="fa-solid fa-trash"></i>
-            Delete
-          </button>
-        </div>
-      </div>
+      <!-- JavaScript will insert all meeting cards here -->
+      <div id="meetings-list"></div>
     </div>
+
+    <script type="module" src="js/load-meetings.js"></script>
   </body>
 </html>

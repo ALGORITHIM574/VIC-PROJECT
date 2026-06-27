@@ -1,0 +1,97 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  border-radius: 15px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+  color: #1f2937;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   INFO BOX
+========================= */
+
+.info {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.info p {
+  font-size: 17px;
+  color: #555;
+}
+
+.info strong {
+  color: #111827;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.section {
+  margin-bottom: 35px;
+}
+
+.section h2 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.section p {
+  line-height: 1.8;
+  color: #444;
+  white-space: pre-wrap;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}

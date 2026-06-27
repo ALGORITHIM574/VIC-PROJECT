@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Edit Meeting</title>
+
+    <link rel="stylesheet" href="css/add-meeting.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="form-container">
+      <div class="form-header">
+        <h1>
+          <i class="fa-solid fa-calendar-plus"></i>
+          Edit Meeting
+        </h1>
+
+        <p>Update church meeting details and minutes</p>
+      </div>
+
+      <form>
+        <label> Meeting Title </label>
+        <input
+          id="meeting-title"
+          type="text"
+          placeholder="Example: Youth Committee Meeting"
+        />
+
+        <label> Meeting Date </label>
+        <input id="meeting-date" type="date" />
+
+        <label> Location </label>
+        <input
+          id="meeting-location"
+          type="text"
+          placeholder="Example: Main Church Hall"
+        />
+
+        <label> Agenda </label>
+        <textarea
+          id="meeting-agenda"
+          placeholder="Write meeting agenda..."
+        ></textarea>
+
+        <label> Meeting Minutes </label>
+        <textarea
+          id="meeting-minutes"
+          placeholder="Write meeting minutes..."
+        ></textarea>
+
+        <button id="save-meeting" type="submit">
+          <i class="fa-solid fa-save"></i>
+          Update Meeting
+        </button>
+      </form>
+    </div>
+  </body>
+  <script type="module" src="js/edit-meeting.js"></script>
+</html>

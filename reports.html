@@ -28,19 +28,22 @@
           <div class="totalMonth">
             <i class="fa-solid fa-hand-holding-dollar"></i>
             <p>Total This month<br /></p>
-            <h4>KES12,000</h4>
+            <h4 id="total-month">KES 0</h4>
           </div>
           <div class="totalMember">
             <i class="fa-solid fa-users"></i><br />
-            Total Members<br />230
+            Total members</br>
+            <h4 id="total-members">0</h4>
+            <br />
           </div>
           <div class="sunday">
-            <i class="fa-solid fa-calendar-days"></i><br />
-            Sunday This month<br />4
+            <i class="fa-solid fa-calendar-days"></i><br />Total sundays</br>
+            <h4 id="total-sundays">0</h4>
           </div>
           <div class="HCB">
-            <i class="fa-solid fa-trophy"></i> <br />Highest Contributor<br />KES
-            8,000
+            <i class="fa-solid fa-trophy"></i> <br />Highest Contribution<br />
+            <h4 id="highest-contribution">KES 0</h4>
+            <br />
           </div>
         </div>
         <!-- Monthly Overview -->
@@ -64,26 +67,25 @@
       <div class="summary-section">
         <h2>Contribution Summary</h2>
 
-        <div class="summary-item">
-          <span>Total Contributions</span>
-          <span>KES 120,000</span>
-        </div>
+     <div class="summary-item">
+    <span>Total Contributions</span>
+    <span id="summary-total">KES 0</span>
+</div>
 
-        <div class="summary-item">
-          <span>Average Per Sunday</span>
-          <span>KES 30,000</span>
-        </div>
+<div class="summary-item">
+    <span>Average Per Sunday</span>
+    <span id="summary-average">KES 0</span>
+</div>
 
-        <div class="summary-item">
-          <span>Contributing Members</span>
-          <span>120</span>
-        </div>
+<div class="summary-item">
+    <span>Contributing Members</span>
+    <span id="summary-contributors">0</span>
+</div>
 
-        <div class="summary-item">
-          <span>Non-Contributing Members</span>
-          <span>30</span>
-        </div>
-      </div>
+<div class="summary-item">
+    <span>Non-Contributing Members</span>
+    <span id="summary-noncontributors">0</span>
+</div>
 
       <!-- Sunday Table -->
       <div class="table-section">
@@ -138,5 +140,5 @@
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="js/report.js"></script>
+  <script type="module" src="js/report.js"></script>
 </html>

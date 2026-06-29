@@ -1,9 +1,7 @@
 import { supabase } from "./supabase.js";
+import { exportReport } from "./export.js";
 
-// ==========================
-// Chart Variables
-// ==========================
-
+const exportButton = document.getElementById("export-report");
 const ctx = document.getElementById("myChart");
 const totalMonth = document.getElementById("total-month");
 const totalMembers = document.getElementById("total-members");
@@ -15,9 +13,11 @@ const summaryContributors = document.getElementById("summary-contributors");
 const summaryNonContributors = document.getElementById(
   "summary-noncontributors",
 );
+const reportTableBody = document.getElementById("report-table-body");
 
 let myChart;
 let chartData = [];
+let statistics = {};
 
 // ==========================
 // Dashboard Starts Here
@@ -27,6 +27,7 @@ async function loadDashboard() {
   const contributions = await loadReport();
 
   await loadStatistics(contributions);
+  buildReportTable(contributions);
 }
 
 loadDashboard();
@@ -52,10 +53,6 @@ async function loadReport() {
   return data;
 }
 async function loadStatistics(contributions) {
-  // ==========================
-  // Total Members
-  // ==========================
-
   const { data: members, error } = await supabase.from("members").select("id");
 
   if (error) {
@@ -129,6 +126,71 @@ async function loadStatistics(contributions) {
 
   // Non-Contributing Members
   summaryNonContributors.textContent = members.length - uniqueMembers.size;
+  //MAKE THE VALUES GLOBEL
+  statistics = {
+    totalMembers: members.length,
+
+    totalContribution: total,
+
+    highestContribution: highest,
+
+    totalSundays: uniqueDates.size,
+
+    averagePerSunday: average,
+
+    contributingMembers: uniqueMembers.size,
+
+    nonContributingMembers: members.length - uniqueMembers.size,
+  };
+}
+function buildReportTable(contributions) {
+  const grouped = {};
+
+  contributions.forEach((c) => {
+    const date = new Date(c.contribution_date);
+
+    const week = `Week ${Math.ceil(date.getDate() / 7)}`;
+
+    if (!grouped[week]) {
+      grouped[week] = {
+        total: 0,
+        contributors: new Set(),
+        date: c.contribution_date,
+      };
+    }
+
+    grouped[week].total += Number(c.amount);
+
+    grouped[week].contributors.add(c.member_id);
+  });
+
+  reportTableBody.innerHTML = "";
+
+  Object.keys(grouped).forEach((week) => {
+    const row = grouped[week];
+
+    const average = row.total / row.contributors.size;
+
+    reportTableBody.innerHTML += `
+
+        <tr>
+
+            <td>${week}</td>
+
+            <td>${row.date}</td>
+
+            <td>KES ${row.total.toLocaleString()}</td>
+
+            <td>${row.contributors.size}</td>
+
+            <td>KES ${average.toLocaleString(undefined, {
+              maximumFractionDigits: 2,
+            })}</td>
+
+        </tr>
+
+        `;
+  });
 }
 // ==========================
 // Convert Contributions into Weekly Totals
@@ -205,3 +267,6 @@ function createChart(data, type) {
     },
   });
 }
+exportButton.addEventListener("click", () => {
+  exportReport(statistics, chartData);
+});

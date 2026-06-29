@@ -42,6 +42,21 @@
   background: #124be7;
   transform: scale(1.05);
 }
+#export-report {
+  background: #2563eb;
+  color: aliceblue;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+  border: none;
+}
+#export-report:hover {
+  background: #124be7;
+  transform: scale(1.05);
+}
 .main-content {
   width: 90%;
   max-width: 1400px;

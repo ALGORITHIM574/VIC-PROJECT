@@ -20,7 +20,7 @@
       </div>
 
       <div class="report-actions">
-        <button id="report">Export Report</button>
+        <button id="export-report">Export Report</button>
         <button id="report">Print Report</button>
       </div>
       <div class="main-content">
@@ -102,43 +102,14 @@
             </tr>
           </thead>
 
-          <tbody>
-            <tr>
-              <td>Week 1</td>
-              <td>2 June 2026</td>
-              <td>28,500</td>
-              <td>95</td>
-              <td>300</td>
-            </tr>
-
-            <tr>
-              <td>Week 2</td>
-              <td>9 June 2026</td>
-              <td>30,000</td>
-              <td>98</td>
-              <td>306</td>
-            </tr>
-
-            <tr>
-              <td>Week 3</td>
-              <td>16 June 2026</td>
-              <td>31,000</td>
-              <td>100</td>
-              <td>310</td>
-            </tr>
-
-            <tr>
-              <td>Week 4</td>
-              <td>23 June 2026</td>
-              <td>30,500</td>
-              <td>97</td>
-              <td>315</td>
-            </tr>
-          </tbody>
+<tbody id="report-table-body">
+</tbody>
+</tbody>
         </table>
       </div>
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script type="module" src="js/report.js"></script>
 </html>

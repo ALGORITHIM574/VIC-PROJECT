@@ -27,7 +27,7 @@
   flex-direction: row;
   gap: 20px;
 }
-#report {
+#print-report {
   background: #2563eb;
   color: aliceblue;
   padding: 12px 20px;
@@ -38,7 +38,7 @@
   transition: 0.2s;
   border: none;
 }
-#report:hover {
+#print-report:hover {
   background: #124be7;
   transform: scale(1.05);
 }
@@ -234,4 +234,24 @@
 
 .table-section tbody tr:hover {
   background: #f8fafc;
+}
+@media print {
+  .report-actions,
+  .chart-type {
+    display: none;
+  }
+
+  body {
+    background: white;
+  }
+
+  .reports-page {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 20px;
+
+    box-shadow: none;
+  }
 }

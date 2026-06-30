@@ -1,0 +1,13 @@
+<mxfile host="65bd71144e">
+    <diagram id="GGdRxuMqpA3izMX7feNU" name="Page-1">
+        <mxGraphModel dx="454" dy="271" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Visitor&#xa;&#xa;&#xa;                     │&#xa;&#xa;&#xa;                     ▼&#xa;&#xa;&#xa;          Register Account&#xa;&#xa;&#xa;(Name)&#xa;(Email)&#xa;(Phone)&#xa;(Password)&#xa;&#xa;&#xa;                     │&#xa;&#xa;&#xa;                     ▼&#xa;&#xa;&#xa;      registration_requests&#xa;&#xa;&#xa;Status = Pending&#xa;&#xa;&#xa;                     │&#xa;&#xa;&#xa;         Admin Notification&#xa;&#xa;&#xa;                     │&#xa;&#xa;&#xa;                     ▼&#xa;&#xa;&#xa;        Admin Reviews Request&#xa;&#xa;&#xa;        ┌──────────────┐&#xa;        │              │&#xa;        ▼              ▼&#xa;&#xa;&#xa;    Approve         Reject&#xa;&#xa;&#xa;        │              │&#xa;        ▼              ▼&#xa;&#xa;&#xa;Create Supabase     Status = Rejected&#xa;Auth User&#xa;&#xa;&#xa;        │&#xa;&#xa;&#xa;        ▼&#xa;&#xa;&#xa;Insert into Members Table&#xa;&#xa;&#xa;approved = true&#xa;&#xa;&#xa;role = Member&#xa;&#xa;&#xa;        │&#xa;&#xa;&#xa;        ▼&#xa;&#xa;&#xa;Member Can Login" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="50" width="240" height="1220" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

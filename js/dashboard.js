@@ -1,54 +1,48 @@
-// import { supabase } from "./supabase.js";
+import { requireRole } from "./auth-guard.js";
 
-// const {
-//   data: { session },
-// } = await supabase.auth.getSession();
+// ==========================
+// Security Check
+// ==========================
 
-// if (!session) {
-//   window.location.href = "login.html";
-// }
-import { supabase } from "./supabase.js";
+const profile = await requireRole(["Admin", "Secretary", "Member"]);
 
-const {
-  data: { session },
-} = await supabase.auth.getSession();
-
-if (!session) {
-  window.location.href = "login.html";
+if (!profile) {
+  throw new Error("Unauthorized");
 }
 
-const user = session.user;
+// ==========================
+// Username
+// ==========================
 
-const { data: profile, error } = await supabase
-  .from("profiles")
-  .select("full_name,role")
-  .eq("id", user.id)
-  .single();
+document.getElementById("username").textContent = profile.full_name;
 
-// if (error) {
-//   console.log(error);
+// ==========================
+// Sections
+// ==========================
 
-//   window.location.href = "login.html";
-// }
-if (error) {
-  console.log("Profile error:", error.message);
+const adminSection = document.getElementById("admin-section");
+const secretarySection = document.getElementById("secretary-section");
+const memberSection = document.getElementById("member-section");
 
-  //return;
+// Hide everything first
+if (adminSection) adminSection.style.display = "none";
+if (secretarySection) secretarySection.style.display = "none";
+if (memberSection) memberSection.style.display = "none";
+
+// ==========================
+// Show Correct Section
+// ==========================
+
+if (profile.role === "Admin") {
+  if (adminSection) adminSection.style.display = "block";
 }
 
-// document.getElementById("username").textContent = profile.full_name;
-document.getElementById("username").textContent = profile.full_name || "User";
-
-const role = profile.role;
-
-if (role === "admin") {
-  document.getElementById("admin-section").style.display = "block";
+if (profile.role === "Secretary") {
+  if (secretarySection) secretarySection.style.display = "block";
 }
 
-if (role === "secretary") {
-  document.getElementById("secretary-section").style.display = "block";
+if (profile.role === "Member") {
+  if (memberSection) memberSection.style.display = "block";
 }
 
-if (role === "member") {
-  document.getElementById("member-section").style.display = "block";
-}
+console.log(profile);

@@ -1,4 +1,7 @@
 import { supabase } from "./supabase.js";
+import { requireRole } from "./auth-guard.js";
+
+await requireRole(["Admin", "Secretary"]);
 //tests
 console.log("meetings.js loaded");
 const {

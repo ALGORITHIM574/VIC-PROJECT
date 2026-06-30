@@ -1,4 +1,7 @@
 import { supabase } from "./supabase.js";
+import { requireRole } from "./auth-guard.js";
+
+await requireRole(["Admin"]);
 
 const tableBody = document.getElementById("members-body");
 

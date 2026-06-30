@@ -9,7 +9,7 @@ export async function exportReport(statistics, chartData) {
 
   doc.setFont("helvetica", "bold");
   doc.setFontSize(20);
-  doc.text("VICTORY IN CHRIST CHURCH", 20, 20);
+  doc.text("VISION IN CHRIST CHURCH", 20, 20);
 
   doc.setFontSize(15);
   doc.text("Contribution Report", 20, 30);

@@ -2,6 +2,7 @@ import { supabase } from "./supabase.js";
 import { exportReport } from "./export.js";
 
 const exportButton = document.getElementById("export-report");
+const printButton = document.getElementById("print-report");
 const ctx = document.getElementById("myChart");
 const totalMonth = document.getElementById("total-month");
 const totalMembers = document.getElementById("total-members");
@@ -269,4 +270,7 @@ function createChart(data, type) {
 }
 exportButton.addEventListener("click", () => {
   exportReport(statistics, chartData);
+});
+printButton.addEventListener("click", () => {
+  window.print();
 });

@@ -4,6 +4,7 @@ export async function requireRole(allowedRoles) {
   // ==========================
   // Check Session
   // ==========================
+
   const {
     data: { session },
   } = await supabase.auth.getSession();
@@ -16,9 +17,10 @@ export async function requireRole(allowedRoles) {
   // ==========================
   // Get Member Profile
   // ==========================
+
   const { data: profile, error } = await supabase
     .from("members")
-    .select("full_name, email, role")
+    .select("full_name, email, role, status")
     .eq("email", session.user.email)
     .single();
 
@@ -33,8 +35,23 @@ export async function requireRole(allowedRoles) {
   }
 
   // ==========================
+  // Check Approval Status
+  // ==========================
+
+  if (profile.status !== "Approved") {
+    alert("Your account is awaiting administrator approval.");
+
+    await supabase.auth.signOut();
+
+    window.location.href = "login.html";
+
+    return null;
+  }
+
+  // ==========================
   // Check Role
   // ==========================
+
   if (!allowedRoles.includes(profile.role)) {
     alert("Access Denied");
 
@@ -43,6 +60,9 @@ export async function requireRole(allowedRoles) {
     return null;
   }
 
-  // Return the whole profile
+  // ==========================
+  // Return Profile
+  // ==========================
+
   return profile;
 }

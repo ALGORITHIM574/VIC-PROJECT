@@ -1,48 +1,99 @@
 import { requireRole } from "./auth-guard.js";
 
 // ==========================
-// Security Check
+// SECURITY CHECK
 // ==========================
 
-const profile = await requireRole(["Admin", "Secretary", "Member"]);
+const profile = await requireRole(["admin", "Secretary", "Member"]);
 
 if (!profile) {
   throw new Error("Unauthorized");
 }
 
 // ==========================
-// Username
+// USERNAME
 // ==========================
 
-document.getElementById("username").textContent = profile.full_name;
+const username = document.getElementById("username");
+
+if (username) {
+  username.textContent = profile.full_name;
+}
 
 // ==========================
-// Sections
+// DASHBOARD PANELS
 // ==========================
 
 const adminSection = document.getElementById("admin-section");
 const secretarySection = document.getElementById("secretary-section");
 const memberSection = document.getElementById("member-section");
 
-// Hide everything first
+// ==========================
+// SIDEBAR MENUS
+// ==========================
+
+const membersMenu = document.getElementById("members-menu");
+const reportsMenu = document.getElementById("reports-menu");
+const settingsMenu = document.getElementById("settings-menu");
+
+// ==========================
+// OTHER CONTROLS
+// ==========================
+
+const addContributionButton = document.getElementById("btn");
+
+// ==========================
+// HIDE EVERYTHING FIRST
+// ==========================
+
 if (adminSection) adminSection.style.display = "none";
 if (secretarySection) secretarySection.style.display = "none";
 if (memberSection) memberSection.style.display = "none";
 
+if (membersMenu) membersMenu.style.display = "none";
+if (reportsMenu) reportsMenu.style.display = "none";
+if (settingsMenu) settingsMenu.style.display = "none";
+
+if (addContributionButton) addContributionButton.style.display = "none";
+
 // ==========================
-// Show Correct Section
+// ADMIN
 // ==========================
 
-if (profile.role === "Admin") {
+if (profile.role === "admin") {
   if (adminSection) adminSection.style.display = "block";
+
+  if (membersMenu) membersMenu.style.display = "block";
+  if (reportsMenu) reportsMenu.style.display = "block";
+  if (settingsMenu) settingsMenu.style.display = "block";
+
+  if (addContributionButton)
+    addContributionButton.style.display = "inline-block";
 }
+
+// ==========================
+// SECRETARY
+// ==========================
 
 if (profile.role === "Secretary") {
   if (secretarySection) secretarySection.style.display = "block";
+
+  if (reportsMenu) reportsMenu.style.display = "block";
+
+  if (addContributionButton)
+    addContributionButton.style.display = "inline-block";
 }
+
+// ==========================
+// MEMBER
+// ==========================
 
 if (profile.role === "Member") {
   if (memberSection) memberSection.style.display = "block";
 }
+
+// ==========================
+// DEBUG
+// ==========================
 
 console.log(profile);

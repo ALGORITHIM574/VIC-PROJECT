@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Create Account</title>
+
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+
+  <body>
+    <div class="login-container">
+      <div class="logo">
+        <h1>VIC Church</h1>
+        <p>Create Your Account</p>
+      </div>
+
+      <form id="signup-form">
+        <label>Full Name</label>
+        <input
+          type="text"
+          id="full-name"
+          placeholder="Enter Full Name"
+          required
+        />
+
+        <label>Phone Number</label>
+        <input type="text" id="phone" placeholder="07XXXXXXXX" required />
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter Email" required />
+
+        <label>Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter Password"
+          required
+        />
+
+        <button type="submit">Create Account</button>
+
+        <p id="message"></p>
+
+        <p style="margin-top: 20px">
+          Already have an account?
+          <a href="login.html">Login</a>
+        </p>
+      </form>
+    </div>
+
+    <script type="module" src="js/signup.js"></script>
+  </body>
+</html>

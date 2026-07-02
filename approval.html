@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Member Approval</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/approval.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <h2>VIC YOUTH CONTRIBUTION</h2>
+
+        <p>Contribution System</p>
+      </div>
+
+      <ul class="menu">
+        <li>
+          <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a href="meetings.html">
+            <i class="fa-solid fa-calendar"></i>
+            Meetings
+          </a>
+        </li>
+
+        <li>
+          <a href="members.html">
+            <i class="fa-solid fa-users"></i>
+            Members
+          </a>
+        </li>
+
+        <li>
+          <a href="reports.html">
+            <i class="fa-solid fa-chart-column"></i>
+            Reports
+          </a>
+        </li>
+
+        <li class="active">
+          <a href="approval.html">
+            <i class="fa-solid fa-user-check"></i>
+            Pending Approvals
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+          </a>
+        </li>
+      </ul>
+
+      <button id="logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        Logout
+      </button>
+    </div>
+
+    <div class="main-content">
+      <h1>
+        <i class="fa-solid fa-user-check"></i>
+
+        Pending Member Approval
+      </h1>
+
+      <p class="subtitle">Approve newly registered church members.</p>
+
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+
+              <th>Email</th>
+
+              <th>Phone</th>
+
+              <th>Status</th>
+
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="approval-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script type="module" src="js/approval.js"></script>
+
+    <script type="module" src="js/logout.js"></script>
+  </body>
+</html>

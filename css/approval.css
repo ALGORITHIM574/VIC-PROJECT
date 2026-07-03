@@ -93,3 +93,44 @@ button {
 .active a {
   color: white;
 }
+/* ==========================
+   Toast Notification
+========================== */
+
+#toast {
+  position: fixed;
+
+  top: 25px;
+  right: 25px;
+
+  background: #28a745;
+  color: white;
+
+  padding: 15px 22px;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  font-weight: bold;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(-30px);
+
+  transition: 0.4s;
+
+  z-index: 9999;
+}
+
+#toast.show {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+}

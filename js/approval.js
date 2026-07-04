@@ -126,30 +126,31 @@ window.approveMember = async function (id) {
 
   loadPendingMembers();
 };
-// window.approveMember = async function (id) {
-//   if (!confirm("Approve this member?")) {
-//     return;
-//   }
+// test
+window.approveMember = async function (id) {
+  if (!confirm("Approve this member?")) {
+    return;
+  }
 
-//   const { error } = await supabase
-//     .from("members")
-//     .update({
-//       status: "Approved",
-//     })
-//     .eq("id", id);
+  const { error } = await supabase
+    .from("members")
+    .update({
+      status: "Approved",
+    })
+    .eq("id", id);
 
-//   if (error) {
-//     console.log(error);
-//     showToast("Failed to approve member.");
-//     return;
-//   }
+  if (error) {
+    console.log(error);
+    showToast("Failed to approve member.");
+    return;
+  }
 
-//   showToast("✅ Member approved successfully.");
+  showToast("✅ Member approved successfully.");
 
-//   setTimeout(() => {
-//     loadPendingMembers();
-//   }, 2000);
-// };
+  setTimeout(() => {
+    loadPendingMembers();
+  }, 2000);
+};
 
 // ==========================
 // Reject Member

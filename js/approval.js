@@ -8,14 +8,15 @@ import { requireRole } from "./auth-guard.js";
 await requireRole(["admin"]);
 
 const tbody = document.getElementById("approval-body");
-
 const toast = document.getElementById("toast");
+
+// ==========================
+// Toast Notification
+// ==========================
 
 function showToast(message, color = "#28a745") {
   toast.textContent = message;
-
   toast.style.background = color;
-
   toast.classList.add("show");
 
   setTimeout(() => {
@@ -36,7 +37,7 @@ async function loadPendingMembers() {
 
   if (error) {
     console.log(error);
-    showToast("Failed to load pending members.");
+    showToast("Failed to load pending members.", "#dc3545");
     return;
   }
 
@@ -56,23 +57,17 @@ async function loadPendingMembers() {
   data.forEach((member) => {
     tbody.innerHTML += `
       <tr>
-
         <td>${member.full_name}</td>
-
         <td>${member.email}</td>
-
         <td>${member.phone}</td>
-
         <td class="status">${member.status}</td>
 
         <td>
-
           <button
             class="approve"
             onclick="approveMember('${member.id}')">
 
             <i class="fa-solid fa-check"></i>
-
             Approve
 
           </button>
@@ -82,13 +77,10 @@ async function loadPendingMembers() {
             onclick="rejectMember('${member.id}')">
 
             <i class="fa-solid fa-xmark"></i>
-
             Reject
 
           </button>
-
         </td>
-
       </tr>
     `;
   });
@@ -99,13 +91,8 @@ loadPendingMembers();
 // ==========================
 // Approve Member
 // ==========================
-// ==========================
-// Approve Member
-// ==========================
 
 window.approveMember = async function (id) {
-  console.log("Approving member ID:", id);
-
   const { data, error } = await supabase
     .from("members")
     .update({
@@ -114,11 +101,14 @@ window.approveMember = async function (id) {
     .eq("id", id)
     .select();
 
-  console.log("Returned data:", data);
-  console.log("Returned error:", error);
-
   if (error) {
-    alert(error.message);
+    console.log(error);
+    showToast(error.message, "#dc3545");
+    return;
+  }
+
+  if (!data || data.length === 0) {
+    showToast("No member was updated.", "#dc3545");
     return;
   }
 
@@ -126,51 +116,28 @@ window.approveMember = async function (id) {
 
   loadPendingMembers();
 };
-// test
-window.approveMember = async function (id) {
-  if (!confirm("Approve this member?")) {
-    return;
-  }
-
-  const { error } = await supabase
-    .from("members")
-    .update({
-      status: "Approved",
-    })
-    .eq("id", id);
-
-  if (error) {
-    console.log(error);
-    showToast("Failed to approve member.");
-    return;
-  }
-
-  showToast("✅ Member approved successfully.");
-
-  setTimeout(() => {
-    loadPendingMembers();
-  }, 2000);
-};
 
 // ==========================
 // Reject Member
 // ==========================
 
 window.rejectMember = async function (id) {
-  if (!confirm("Are you sure you want to reject this member?")) {
-    return;
-  }
-
-  const { error } = await supabase
+  const { data, error } = await supabase
     .from("members")
     .update({
       status: "Rejected",
     })
-    .eq("id", id);
+    .eq("id", id)
+    .select();
 
   if (error) {
     console.log(error);
-    showToast("Failed to reject member.");
+    showToast(error.message, "#dc3545");
+    return;
+  }
+
+  if (!data || data.length === 0) {
+    showToast("No member was updated.", "#dc3545");
     return;
   }
 

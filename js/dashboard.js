@@ -41,6 +41,13 @@ const settingsMenu = document.getElementById("settings-menu");
 // ==========================
 
 const addContributionButton = document.getElementById("btn");
+const myContributionButton = document.getElementById("my-contributions-btn");
+
+if (myContributionButton) {
+  myContributionButton.addEventListener("click", () => {
+    window.location.href = "my-contributions.html";
+  });
+}
 
 // ==========================
 // HIDE EVERYTHING FIRST

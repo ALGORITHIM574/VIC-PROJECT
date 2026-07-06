@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Contributions</title>
+
+    <link rel="stylesheet" href="css/my-contributions.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <button id="back-btn">
+          <i class="fa-solid fa-arrow-left"></i>
+          Dashboard
+        </button>
+
+        <h1>My Contributions</h1>
+
+        <p>
+          Welcome,
+          <span id="member-name">Loading...</span>
+        </p>
+      </header>
+
+      <section class="cards">
+        <div class="card">
+          <h3>This Month</h3>
+
+          <h2 id="month-total">KES 0</h2>
+        </div>
+
+        <div class="card">
+          <h3>This Year</h3>
+
+          <h2 id="year-total">KES 0</h2>
+        </div>
+
+        <div class="card">
+          <h3>Lifetime Total</h3>
+
+          <h2 id="lifetime-total">KES 0</h2>
+        </div>
+      </section>
+
+      <section class="chart">
+        <h2>Contribution Trend</h2>
+
+        <canvas id="contributionChart"></canvas>
+      </section>
+
+      <section class="history">
+        <h2>Contribution History</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+
+              <th>Amount</th>
+            </tr>
+          </thead>
+
+          <tbody id="history-body"></tbody>
+        </table>
+      </section>
+    </div>
+
+    <!-- <script type="module" src="js/my-contributions.js"></script> -->
+  </body>
+</html>

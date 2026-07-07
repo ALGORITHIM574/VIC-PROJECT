@@ -20,7 +20,7 @@ export async function requireRole(allowedRoles) {
 
   const { data: profile, error } = await supabase
     .from("members")
-    .select("full_name, email, role, status")
+    .select("id, full_name, email, role, status")
     .eq("email", session.user.email)
     .single();
 

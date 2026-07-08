@@ -33,7 +33,7 @@ if (search) {
   });
 }
 // CLOSE CONTRIBUTION MODAL
-const saveBtn = document.querySelector("#save");
+const saveBtn = document.querySelector("#save-contribution");
 
 if (saveBtn && modal) {
   saveBtn.addEventListener("click", function () {
@@ -44,7 +44,7 @@ if (saveBtn && modal) {
 
 // MEMBER MODAL
 
-const memberBtn = document.querySelector("#btn-2");
+const memberBtn = document.querySelector("#save-contribution");
 const modal2 = document.querySelector("#modal-2");
 const overlay = document.querySelector("#overlay");
 
@@ -57,7 +57,7 @@ if (memberBtn && modal2) {
     }
   });
 }
-const saveBtn2 = document.querySelector("#btn-2");
+const saveBtn2 = document.querySelector("#save-contribution");
 
 if (saveBtn2 && modal2) {
   saveBtn.addEventListener("click", function () {

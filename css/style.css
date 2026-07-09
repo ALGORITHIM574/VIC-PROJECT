@@ -545,7 +545,103 @@ select + span {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
-  z-index: 999;
+  z-index: 1000;
+}
+/* ==========================
+   EDIT MEMBER MODAL
+========================== */
+
+#edit-modal {
+  display: none;
+
+  position: fixed;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 450px;
+
+  max-width: 90%;
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+  z-index: 1001;
+}
+
+#edit-modal h2 {
+  text-align: center;
+
+  color: #1f4e79;
+
+  margin-bottom: 20px;
+}
+
+#edit-modal input,
+#edit-modal select {
+  width: 100%;
+
+  padding: 12px;
+
+  margin-bottom: 15px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+}
+
+#edit-modal .buttons {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+}
+
+#cancel-edit {
+  background: #dc3545;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+#update-member {
+  background: #1f4e79;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+#cancel-edit:hover {
+  background: #bb2d3b;
+}
+
+#update-member:hover {
+  background: #173b5d;
 }
 
 #modal-2 {
@@ -789,6 +885,15 @@ select + span {
 
 #member-section h3 {
   color: #16a34a;
+}
+/* xmark  */
+#xmark {
+  background-color: #a7a6ff; /* Matches your light purple background */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
 }
 
 /* MOBILE ROLE BUTTONS */

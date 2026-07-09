@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contributions</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <h2>VIC YOUTH CONTRIBUTION</h2>
+
+        <p>Contribution System</p>
+      </div>
+
+      <ul class="menu">
+        <li>
+          <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a href="members.html">
+            <i class="fa-solid fa-users"></i>
+
+            Members
+          </a>
+        </li>
+
+        <li>
+          <a href="contribution.html">
+            <i class="fa-solid fa-money-bill-wave"></i>
+
+            Contributions
+          </a>
+        </li>
+
+        <li>
+          <a href="meetings.html">
+            <i class="fa-solid fa-calendar"></i>
+
+            Meetings
+          </a>
+        </li>
+
+        <li>
+          <a href="reports.html">
+            <i class="fa-solid fa-chart-column"></i>
+
+            Reports
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tables-2">
+      <div class="main-member">
+        <h2>Church Contributions</h2>
+      </div>
+
+      <div class="details-2">
+        <select id="member-select">
+          <option>Select Member</option>
+        </select>
+
+        <input type="number" id="amount" placeholder="Contribution Amount" />
+
+        <button id="save-contribution">
+          <i class="fa-solid fa-floppy-disk"></i>
+
+          Save Contribution
+        </button>
+      </div>
+
+      <hr />
+
+      <br />
+
+      <input
+        type="text"
+        id="search-contribution"
+        placeholder="Search contribution..."
+      />
+
+      <br /><br />
+
+      <table class="members-table">
+        <thead>
+          <tr>
+            <th>#</th>
+
+            <th>Member</th>
+
+            <th>Amount</th>
+
+            <th>Date</th>
+
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="contribution-body"></tbody>
+      </table>
+    </div>
+
+    <div id="toast"></div>
+
+    <script type="module" src="js/contribution.js"></script>
+  </body>
+</html>

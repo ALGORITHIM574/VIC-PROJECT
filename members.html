@@ -108,6 +108,42 @@
         Save Member
       </button>
     </div>
+    <!-- the toast -->
+    <div id="edit-modal">
+      <h2>Edit Member</h2>
+
+      <input type="hidden" id="edit-id" />
+
+      <input type="text" id="edit-name" placeholder="Full Name" />
+
+      <input type="text" id="edit-phone" placeholder="Phone" />
+
+      <input type="email" id="edit-email" placeholder="Email" />
+
+      <input type="date" id="edit-date" />
+
+      <select id="edit-role">
+        <option value="Member">Member</option>
+
+        <option value="secretary">Secretary</option>
+
+        <option value="admin">Admin</option>
+      </select>
+
+      <select id="edit-status">
+        <option value="Approved">Approved</option>
+
+        <option value="Pending">Pending</option>
+
+        <option value="Rejected">Rejected</option>
+      </select>
+
+      <div class="buttons">
+        <button id="cancel-edit">Cancel</button>
+
+        <button id="update-member">Save Changes</button>
+      </div>
+    </div>
 
     <script type="module" src="js/members.js"></script>
     <script src="js/script.js"></script>

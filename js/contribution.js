@@ -3,6 +3,7 @@ import { supabase } from "./supabase.js";
 const memberSelect = document.getElementById("member-select");
 const saveButton = document.getElementById("save-contribution");
 const amountInput = document.getElementById("amount");
+const contributionBody = document.getElementById("contribution-body");
 
 // ==========================
 // Toast Message
@@ -98,7 +99,7 @@ saveButton.addEventListener("click", async () => {
   // --------------------------
 
   showToast("✅ Contribution Added");
-
+  loadContributions();
   amountInput.value = "";
   memberSelect.value = "";
 });
@@ -107,4 +108,94 @@ saveButton.addEventListener("click", async () => {
 // Start
 // ==========================
 
+// ==========================
+// Load Contributions
+// ==========================
+
+async function loadContributions() {
+  const { data, error } = await supabase
+    .from("contributions")
+    .select(
+      `
+      id,
+      amount,
+      contribution_date,
+      members (
+        full_name
+      )
+    `,
+    )
+    .order("contribution_date", { ascending: false });
+
+  if (error) {
+    console.log(error);
+    showToast("Failed to load contributions.", "#dc3545");
+    return;
+  }
+
+  contributionBody.innerHTML = "";
+
+  if (data.length === 0) {
+    contributionBody.innerHTML = `
+      <tr>
+        <td colspan="5" style="text-align:center;padding:25px;">
+          No contributions found.
+        </td>
+      </tr>
+    `;
+
+    return;
+  }
+
+  data.forEach((contribution, index) => {
+    contributionBody.innerHTML += `
+
+      <tr>
+
+        <td>${index + 1}</td>
+
+      <td>${contribution.members?.full_name || "Unknown Member"}</td>
+
+        <td>KES ${Number(contribution.amount).toLocaleString()}</td>
+
+      <td>
+
+${new Date(contribution.contribution_date).toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+})}
+
+</td>
+
+        <td>
+
+       <button
+class="edit-btn"
+onclick="editContribution('${contribution.id}')">
+
+<i class="fa-solid fa-pen"></i>
+
+Edit
+
+</button>
+
+<button
+class="delete-btn"
+onclick="deleteContribution('${contribution.id}')">
+
+<i class="fa-solid fa-trash"></i>
+
+Delete
+
+</button>
+
+        </td>
+
+      </tr>
+
+    `;
+  });
+}
 loadMembers();
+loadContributions();

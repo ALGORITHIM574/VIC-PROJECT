@@ -26,6 +26,23 @@ function showToast(message, color = "#28a745") {
   }, 2000);
 }
 
+//search bar
+const search = document.getElementById("search-contribution");
+
+search.addEventListener("keyup", () => {
+  const value = search.value.toLowerCase();
+
+  const rows = document.querySelectorAll("#contribution-body tr");
+
+  rows.forEach((row) => {
+    if (row.textContent.toLowerCase().includes(value)) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+  });
+});
+
 // ==========================
 // Load Approved Members
 // ==========================

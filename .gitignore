@@ -19,3 +19,6 @@ Thumbs.db
 dist/
 build/
 .sass-cache/
+
+# Local Netlify folder
+.netlify

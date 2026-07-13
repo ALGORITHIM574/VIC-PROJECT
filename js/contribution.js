@@ -4,6 +4,10 @@ const memberSelect = document.getElementById("member-select");
 const saveButton = document.getElementById("save-contribution");
 const amountInput = document.getElementById("amount");
 const contributionBody = document.getElementById("contribution-body");
+const editModal = document.getElementById("edit-modal");
+const overlay = document.getElementById("overlay");
+const cancelEdit = document.getElementById("cancel-edit");
+const updateButton = document.getElementById("update-contribution");
 
 // ==========================
 // Toast Message
@@ -215,4 +219,17 @@ Delete
   });
 }
 loadMembers();
+// const editMember = document.getElementById("edit-member");
+
+// editMember.innerHTML = "";
+
+// data.forEach((member) => {
+//   const option = document.createElement("option");
+
+//   option.value = member.id;
+
+//   option.textContent = member.full_name;
+
+//   editMember.appendChild(option);
+// });
 loadContributions();

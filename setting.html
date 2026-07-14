@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Settings</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <!-- Copy your existing sidebar here -->
+    </div>
+
+    <div class="tables-2">
+      <h2>
+        <i class="fa-solid fa-gear"></i>
+
+        System Settings
+      </h2>
+
+      <div class="settings-card">
+        <h3>Church Information</h3>
+
+        <input type="text" id="church-name" placeholder="Church Name" />
+
+        <input type="text" id="pastor-name" placeholder="Pastor Name" />
+
+        <input type="text" id="church-phone" placeholder="Church Phone" />
+
+        <input type="email" id="church-email" placeholder="Church Email" />
+
+        <hr />
+
+        <h3>System Preferences</h3>
+
+        <select id="currency">
+          <option>KES</option>
+        </select>
+
+        <select id="timezone">
+          <option>Africa/Nairobi</option>
+        </select>
+
+        <hr />
+
+        <h3>Change Password</h3>
+
+        <input
+          type="password"
+          id="current-password"
+          placeholder="Current Password"
+        />
+
+        <input type="password" id="new-password" placeholder="New Password" />
+
+        <input
+          type="password"
+          id="confirm-password"
+          placeholder="Confirm Password"
+        />
+
+        <button id="save-settings">
+          <i class="fa-solid fa-floppy-disk"></i>
+
+          Save Settings
+        </button>
+      </div>
+    </div>
+
+    <div id="toast"></div>
+
+    <script type="module" src="js/settings.js"></script>
+  </body>
+</html>

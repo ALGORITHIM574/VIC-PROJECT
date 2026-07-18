@@ -119,9 +119,32 @@ saveButton.addEventListener("click", async () => {
   // Success
   // --------------------------
 
+  // --------------------------
+  // Create Notification
+  // --------------------------
+
+  const { error: notificationError } = await supabase
+    .from("notifications")
+    .insert({
+      member_id: member_id,
+      title: "Contribution Received",
+      message: `Thank you! Your contribution of KES ${amount.toLocaleString()} has been received.`,
+    });
+
+  if (notificationError) {
+    console.log(notificationError);
+  }
+
+  // --------------------------
+  // Success
+  // --------------------------
+
   showToast("✅ Contribution Added");
+
   loadContributions();
+
   amountInput.value = "";
+
   memberSelect.value = "";
 });
 

@@ -26,6 +26,7 @@ const yearTotalEl = document.getElementById("year-total");
 const lifetimeTotalEl = document.getElementById("lifetime-total");
 const historyBody = document.getElementById("history-body");
 const chartCanvas = document.getElementById("contributionChart");
+
 const btn = document.getElementById("back-btn");
 btn.addEventListener("click", function () {
   window.location.href = "dashboard.html";

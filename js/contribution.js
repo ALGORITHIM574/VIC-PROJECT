@@ -129,10 +129,13 @@ saveButton.addEventListener("click", async () => {
       member_id: member_id,
       title: "Contribution Received",
       message: `Thank you! Your contribution of KES ${amount.toLocaleString()} has been received.`,
+      is_read: false,
     });
 
   if (notificationError) {
-    console.log(notificationError);
+    if (notificationError) {
+      console.error("Notification Error:", notificationError);
+    }
   }
 
   // --------------------------
@@ -255,4 +258,4 @@ loadMembers();
 
 //   editMember.appendChild(option);
 // });
-loadContributions();
+await loadContributions();

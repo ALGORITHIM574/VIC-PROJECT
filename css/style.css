@@ -344,19 +344,6 @@ button:hover {
   z-index: 1000;
 }
 
-/* .details {
-  /* display: flex;
-  gap: 10px;
-  margin-top: 15px; 
-}
-
-.details input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-} */
-/* Target the outer main container div */
 div:has(> button) {
   display: flex;
   flex-direction: column;

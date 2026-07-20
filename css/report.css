@@ -255,3 +255,156 @@
     box-shadow: none;
   }
 }
+/* =========================
+   TABLETS (768px and below)
+========================= */
+
+@media (max-width: 768px) {
+  .main-content {
+    width: 95%;
+  }
+
+  .report-header {
+    font-size: 2rem;
+  }
+
+  .report-header:hover {
+    transform: scale(1.05);
+  }
+
+  .report-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .report-actions button,
+  #print-report,
+  #export-report {
+    width: 100%;
+  }
+
+  .divs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chart-section,
+  .summary-section,
+  .table-section {
+    padding: 20px;
+  }
+
+  .chart-placeholder {
+    height: 320px;
+  }
+
+  .summary-item {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .table-section th,
+  .table-section td {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   MOBILE (480px and below)
+========================= */
+
+@media (max-width: 480px) {
+  .main-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .report-header {
+    font-size: 1.6rem;
+  }
+
+  .report-header:hover,
+  .summary-section h2:hover,
+  .table-section h2:hover {
+    transform: none;
+  }
+
+  .divs {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .totalMonth,
+  .totalMember,
+  .sunday,
+  .HCB {
+    padding: 15px;
+  }
+
+  #print-report,
+  #export-report {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .chart-section,
+  .summary-section,
+  .table-section {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .chart-placeholder {
+    height: 250px;
+    padding: 10px;
+  }
+
+  .chart-section h2,
+  .summary-section h2,
+  .table-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .chart-type {
+    gap: 8px;
+  }
+
+  .chart-type button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .summary-item {
+    font-size: 14px;
+  }
+
+  .table-section {
+    overflow-x: auto;
+  }
+
+  .table-section table {
+    min-width: 600px;
+  }
+
+  .table-section th,
+  .table-section td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   LARGE SCREENS (1200px+)
+========================= */
+
+@media (min-width: 1200px) {
+  .main-content {
+    width: 90%;
+  }
+
+  .divs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

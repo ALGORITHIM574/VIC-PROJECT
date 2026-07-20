@@ -14,8 +14,7 @@ body {
 }
 
 .login-container {
-  width: 90%;
-  max-width: 400px;
+  width: min(90%, 400px);
   background: white;
   padding: 35px;
   border-radius: 20px;
@@ -77,4 +76,48 @@ button:hover {
   text-align: center;
   margin-top: 15px;
   font-size: 14px;
+}
+/* ==========================
+   MOBILE (480px and below)
+========================== */
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+    align-items: flex-start;
+  }
+
+  .login-container {
+    width: 100%;
+    margin-top: 30px;
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+
+  .logo p {
+    font-size: 14px;
+  }
+
+  label {
+    font-size: 15px;
+  }
+
+  input {
+    padding: 12px;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+
+  button {
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+  }
+
+  #message {
+    font-size: 13px;
+  }
 }

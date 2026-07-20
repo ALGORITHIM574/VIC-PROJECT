@@ -4,7 +4,7 @@ import { requireRole } from "./auth-guard.js";
 // SECURITY CHECK
 // ==========================
 
-const profile = await requireRole(["admin", "Secretary", "Member"]);
+const profile = await requireRole(["admin", "sec", "Member"]);
 
 if (!profile) {
   throw new Error("Unauthorized");
@@ -42,13 +42,18 @@ const settingsMenu = document.getElementById("settings-menu");
 
 const addContributionButton = document.getElementById("btn");
 const myContributionButton = document.getElementById("my-contributions-btn");
+const viewMeetingsButton = document.getElementById("view-meetings-btn");
 
 if (myContributionButton) {
   myContributionButton.addEventListener("click", () => {
     window.location.href = "my-contributions.html";
   });
 }
-
+if (viewMeetingsButton) {
+  viewMeetingsButton.addEventListener("click", () => {
+    window.location.href = "meetings.html";
+  });
+}
 // ==========================
 // HIDE EVERYTHING FIRST
 // ==========================
@@ -82,7 +87,7 @@ if (profile.role === "admin") {
 // SECRETARY
 // ==========================
 
-if (profile.role === "Secretary") {
+if (profile.role === "sec") {
   if (secretarySection) secretarySection.style.display = "block";
 
   if (reportsMenu) reportsMenu.style.display = "block";

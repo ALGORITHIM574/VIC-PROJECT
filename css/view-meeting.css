@@ -14,6 +14,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 40px 20px;
+  min-height: 100vh;
 }
 
 /* =========================
@@ -36,6 +37,7 @@ body {
 h1 {
   color: #1f2937;
   margin-bottom: 30px;
+  font-size: 2rem;
 }
 
 /* =========================
@@ -69,12 +71,15 @@ h1 {
 .section h2 {
   color: #2563eb;
   margin-bottom: 10px;
+  font-size: 1.4rem;
 }
 
 .section p {
   line-height: 1.8;
   color: #444;
   white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* =========================
@@ -94,4 +99,82 @@ button {
 
 button:hover {
   background: #1d4ed8;
+}
+
+/* =========================
+   TABLETS (768px and below)
+========================= */
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  .container {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .info {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .info p {
+    font-size: 16px;
+  }
+
+  .section h2 {
+    font-size: 1.25rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* =========================
+   MOBILE (480px and below)
+========================= */
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px 10px;
+  }
+
+  .container {
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .info p {
+    font-size: 15px;
+  }
+
+  .section {
+    margin-bottom: 25px;
+  }
+
+  .section h2 {
+    font-size: 1.1rem;
+  }
+
+  .section p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
 }

@@ -81,7 +81,7 @@
       <div id="admin-section">
         <h3>Admin Panel</h3>
 
-        <button onclick="window.location = 'members.html'">Add Member</button>
+        <!-- <button onclick="window.location = 'members.html'">Add Member</button> -->
 
         <button onclick="window.location = 'contribution.html'">
           Manage Contributions
@@ -96,7 +96,9 @@
       <div id="secretary-section">
         <h3>Secretary Panel</h3>
 
-        <button>Add Meeting</button>
+        <button onclick="window.location = 'add-meeting.html'">
+          Add Meeting
+        </button>
 
         <button>Upload Minutes</button>
       </div>
@@ -104,7 +106,10 @@
       <div id="member-section">
         <h3>Member Area</h3>
 
-        <button>View Meetings</button>
+        <button id="view-meetings-btn" class="btn">
+          <i class="fa-solid fa-calendar-days"></i>
+          View Meetings
+        </button>
 
         <button id="my-contributions-btn">My Contributions</button>
       </div>

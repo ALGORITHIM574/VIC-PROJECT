@@ -1,14 +1,20 @@
 import { supabase } from "./supabase.js";
 import { requireRole } from "./auth-guard.js";
 
-await requireRole(["Admin", "Secretary"]);
+await requireRole(["admin", "sec"]);
 //tests
 console.log("meetings.js loaded");
+// const {
+//   data: { user },
+// } = await supabase.auth.getUser();
+
+// console.log(user);
+
 const {
   data: { user },
 } = await supabase.auth.getUser();
 
-console.log(user);
+console.log("Logged in user:", user);
 
 const form = document.querySelector("form");
 

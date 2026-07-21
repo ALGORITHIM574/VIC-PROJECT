@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Help Centre | VIC Youth Contribution System</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/help.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ==========================
+SIDEBAR
+========================== -->
+
+    <div class="sidebar">
+      <div class="logo">
+        <h2>VIC YOUTH</h2>
+        <p>Contribution System</p>
+      </div>
+
+      <ul class="menu">
+        <li>
+          <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a href="members.html">
+            <i class="fa-solid fa-users"></i>
+            Members
+          </a>
+        </li>
+
+        <li>
+          <a href="contribution.html">
+            <i class="fa-solid fa-money-bill-wave"></i>
+            Contributions
+          </a>
+        </li>
+
+        <li>
+          <a href="meetings.html">
+            <i class="fa-solid fa-calendar-days"></i>
+            Meetings
+          </a>
+        </li>
+
+        <li>
+          <a href="reports.html">
+            <i class="fa-solid fa-chart-column"></i>
+            Reports
+          </a>
+        </li>
+
+        <li class="active">
+          <a href="help.html">
+            <i class="fa-solid fa-circle-question"></i>
+            Help Centre
+          </a>
+        </li>
+      </ul>
+
+      <button id="logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </button>
+    </div>
+
+    <!-- ==========================
+MAIN CONTENT
+========================== -->
+
+    <div class="help-container">
+      <!-- HEADER -->
+
+      <div class="help-header">
+        <div>
+          <h1>
+            <i class="fa-solid fa-circle-question"></i>
+            Help Centre
+          </h1>
+
+          <p>Learn how to use the VIC Youth Contribution System.</p>
+        </div>
+      </div>
+
+      <!-- SEARCH -->
+
+      <div class="search-box">
+        <i class="fa-solid fa-search"></i>
+
+        <input type="text" id="help-search" placeholder="Search help..." />
+      </div>
+
+      <!-- HELP CONTENT -->
+
+      <div class="help-content">
+        <!-- ========================== -->
+
+        <div class="help-card">
+          <button class="accordion">
+            <i class="fa-solid fa-play"></i>
+
+            Getting Started
+          </button>
+
+          <div class="panel">
+            <p>Welcome to the VIC Youth Contribution System.</p>
+
+            <br />
+
+            <p>
+              This system allows administrators, secretaries and members to
+              manage church activities securely.
+            </p>
+          </div>
+        </div>
+
+        <!-- ========================== -->
+
+        <div class="help-card">
+          <button class="accordion">
+            <i class="fa-solid fa-users"></i>
+
+            Member Management
+          </button>
+
+          <div class="panel">
+            <h3>Approve Member</h3>
+
+            <ol>
+              <li>Open Members.</li>
+
+              <li>Select Pending Member.</li>
+
+              <li>Click Approve.</li>
+
+              <li>The member can now login.</li>
+            </ol>
+
+            <br />
+
+            <h3>Delete Member</h3>
+
+            <ol>
+              <li>Select Member.</li>
+
+              <li>Click Delete.</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- ========================== -->
+
+        <div class="help-card">
+          <button class="accordion">
+            <i class="fa-solid fa-money-bill-wave"></i>
+
+            Contributions
+          </button>
+
+          <div class="panel">
+            <h3>Add Contribution</h3>
+
+            <ol>
+              <li>Select Member.</li>
+
+              <li>Enter Amount.</li>
+
+              <li>Click Save Contribution.</li>
+            </ol>
+
+            <br />
+
+            <h3>Contribution Missing?</h3>
+
+            <ul>
+              <li>Verify the correct member.</li>
+
+              <li>Refresh the page.</li>
+
+              <li>Check contribution history.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ========================== -->
+
+        <div class="help-card">
+          <button class="accordion">
+            <i class="fa-solid fa-calendar-days"></i>
+
+            Meetings
+          </button>
+
+          <div class="panel">
+            <ol>
+              <li>Click New Meeting.</li>
+
+              <li>Enter Title.</li>
+
+              <li>Select Date.</li>
+
+              <li>Add Agenda.</li>
+
+              <li>Upload Minutes.</li>
+
+              <li>Save Meeting.</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- ========================== -->
+
+        <div class="help-card">
+          <button class="accordion">
+            <i class="fa-solid fa-chart-column"></i>
+
+            Reports
+          </button>
+
+          <div class="panel">
+            <ul>
+              <li>View contribution statistics.</li>
+
+              <li>Print reports.</li>
+
+              <li>Download reports.</li>
+
+              <li>Filter by month or year.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ========================== -->
+
+        <div class="help-card">
+          <button class="accordion">
+            <i class="fa-solid fa-headset"></i>
+
+            Support
+          </button>
+
+          <div class="panel">
+            <p>
+              If you experience any problems, open the Support page, describe
+              your issue, upload a screenshot and submit it.
+            </p>
+          </div>
+        </div>
+
+        <!-- ========================== -->
+
+        <div class="help-card">
+          <button class="accordion">
+            <i class="fa-solid fa-circle-info"></i>
+
+            Frequently Asked Questions
+          </button>
+
+          <div class="panel">
+            <h3>I forgot my password.</h3>
+
+            <p>Contact your church administrator.</p>
+
+            <br />
+
+            <h3>I can't login.</h3>
+
+            <p>Your account may not yet be approved.</p>
+
+            <br />
+
+            <h3>Why can't I add meetings?</h3>
+
+            <p>
+              Only Administrators and Secretaries are allowed to create
+              meetings.
+            </p>
+          </div>
+        </div>
+
+        <!-- ========================== -->
+
+        <div class="help-card">
+          <button class="accordion">
+            <i class="fa-solid fa-phone"></i>
+
+            Contact Administrator
+          </button>
+
+          <div class="panel">
+            <p>
+              If your issue cannot be solved, contact your church administrator.
+            </p>
+
+            <br />
+
+            <p>Email: admin@church.org</p>
+
+            <br />
+
+            <p>Phone: +254 XXX XXX XXX</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/help.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+/* ==========================
+   Responsive Tables
+========================== */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+
+  border-radius: 15px;
+
+  background: white;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-container table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 20px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+@media (max-width: 768px) {
+  .table-container {
+    border-radius: 12px;
+  }
+
+  .table-container table {
+    min-width: 700px;
+  }
+
+  th,
+  td {
+    padding: 12px;
+    font-size: 14px;
+  }
+}

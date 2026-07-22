@@ -5,9 +5,10 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Settings</title>
+    <title>Settings | VIC Youth Contribution System</title>
 
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/settings.css" />
 
     <link
       rel="stylesheet"
@@ -16,69 +17,484 @@
   </head>
 
   <body>
-    <h1>UPCOMING SOON</h1>
-    <!-- <div class="sidebar">
-      Copy your existing sidebar here 
+    <!-- ==========================================
+                 SIDEBAR
+    =========================================== -->
+
+    <div class="sidebar">
+      <div class="logo">
+        <h2>VIC YOUTH</h2>
+
+        <p>Contribution System</p>
+      </div>
+
+      <ul class="menu">
+        <li>
+          <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a href="contribution.html">
+            <i class="fa-solid fa-money-bill-wave"></i>
+            Contributions
+          </a>
+        </li>
+
+        <li>
+          <a href="meetings.html">
+            <i class="fa-solid fa-calendar-days"></i>
+            Meetings
+          </a>
+        </li>
+
+        <li id="members-menu">
+          <a href="members.html">
+            <i class="fa-solid fa-users"></i>
+            Members
+          </a>
+        </li>
+
+        <li id="reports-menu">
+          <a href="reports.html">
+            <i class="fa-solid fa-chart-column"></i>
+            Reports
+          </a>
+        </li>
+
+        <li id="settings-menu" class="active">
+          <a href="settings.html">
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+          </a>
+        </li>
+
+        <li>
+          <a href="help.html">
+            <i class="fa-solid fa-circle-question"></i>
+
+            Help Centre
+          </a>
+        </li>
+      </ul>
+
+      <button id="logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        Logout
+      </button>
     </div>
 
-    <div class="tables-2">
-      <h2>
-        <i class="fa-solid fa-gear"></i>
+    <!-- ==========================================
+                  MAIN CONTENT
+    =========================================== -->
 
-        System Settings
-      </h2>
+    <main class="settings-container">
+      <!-- =============================
+                PAGE HEADER
+        ============================== -->
 
-      <div class="settings-card">
-        <h3>Church Information</h3>
+      <section class="page-header">
+        <div>
+          <h1>
+            <i class="fa-solid fa-gear"></i>
 
-        <input type="text" id="church-name" placeholder="Church Name" />
+            Settings
+          </h1>
 
-        <input type="text" id="pastor-name" placeholder="Pastor Name" />
+          <p>
+            Manage your account preferences and personalize your experience.
+          </p>
+        </div>
+      </section>
+      <!-- ==========================================
+                    PROFILE CARD
+        =========================================== -->
 
-        <input type="text" id="church-phone" placeholder="Church Phone" />
+      <section class="settings-card">
+        <div class="card-title">
+          <i class="fa-solid fa-user"></i>
 
-        <input type="email" id="church-email" placeholder="Church Email" />
+          <h2>Profile Information</h2>
+        </div>
 
-        <hr />
+        <div class="profile-section">
+          <div class="profile-photo">
+            <img
+              id="profile-image"
+              src="images/default-profile.png"
+              alt="Profile Picture"
+            />
 
-        <h3>System Preferences</h3>
+            <label class="upload-btn">
+              <i class="fa-solid fa-camera"></i>
 
-        <select id="currency">
-          <option>KES</option>
-        </select>
+              Change Picture
 
-        <select id="timezone">
-          <option>Africa/Nairobi</option>
-        </select>
+              <input type="file" id="profile-upload" accept="image/*" hidden />
+            </label>
+          </div>
 
-        <hr />
+          <div class="profile-form">
+            <div class="input-group">
+              <label>
+                <i class="fa-solid fa-user"></i>
 
-        <h3>Change Password</h3>
+                Full Name
+              </label>
 
-        <input
-          type="password"
-          id="current-password"
-          placeholder="Current Password"
-        />
+              <input type="text" id="full-name" readonly />
+            </div>
 
-        <input type="password" id="new-password" placeholder="New Password" />
+            <div class="input-group">
+              <label>
+                <i class="fa-solid fa-envelope"></i>
 
-        <input
-          type="password"
-          id="confirm-password"
-          placeholder="Confirm Password"
-        />
+                Email Address
+              </label>
 
-        <button id="save-settings">
+              <input type="email" id="email" readonly />
+            </div>
+
+            <div class="input-group">
+              <label>
+                <i class="fa-solid fa-phone"></i>
+
+                Phone Number
+              </label>
+
+              <input type="text" id="phone" />
+            </div>
+
+            <div class="input-group">
+              <label>
+                <i class="fa-solid fa-user-shield"></i>
+
+                Account Role
+              </label>
+
+              <input type="text" id="role" readonly />
+            </div>
+
+            <button id="save-profile" class="primary-btn">
+              <i class="fa-solid fa-floppy-disk"></i>
+
+              Save Profile
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+                NOTIFICATION SETTINGS
+        =========================================== -->
+
+      <section class="settings-card">
+        <div class="card-title">
+          <i class="fa-solid fa-bell"></i>
+
+          <h2>Notification Preferences</h2>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <h4>Contribution Notifications</h4>
+
+            <p>Receive alerts whenever a contribution is recorded.</p>
+          </div>
+
+          <label class="switch">
+            <input type="checkbox" id="notify-contributions" />
+
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <h4>Meeting Notifications</h4>
+
+            <p>Be notified whenever a new meeting is created.</p>
+          </div>
+
+          <label class="switch">
+            <input type="checkbox" id="notify-meetings" />
+
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <h4>Announcement Notifications</h4>
+
+            <p>Receive church announcements instantly.</p>
+          </div>
+
+          <label class="switch">
+            <input type="checkbox" id="notify-announcements" />
+
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <h4>Support Notifications</h4>
+
+            <p>Receive updates about your support tickets.</p>
+          </div>
+
+          <label class="switch">
+            <input type="checkbox" id="notify-support" />
+
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <button id="save-notifications" class="primary-btn">
           <i class="fa-solid fa-floppy-disk"></i>
 
-          Save Settings
+          Save Notification Settings
         </button>
-      </div>
-    </div>
+      </section>
+      <!-- ==========================================
+                  APPEARANCE SETTINGS
+        =========================================== -->
 
-    <div id="toast"></div> -->
+      <section class="settings-card">
+        <div class="card-title">
+          <i class="fa-solid fa-palette"></i>
+
+          <h2>Appearance</h2>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <h4>Theme</h4>
+
+            <p>Choose your preferred application theme.</p>
+          </div>
+
+          <select id="theme">
+            <option value="light">Light Theme</option>
+
+            <option value="dark">Dark Theme (Coming Soon)</option>
+          </select>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <h4>Font Size</h4>
+
+            <p>Adjust the font size for better readability.</p>
+          </div>
+
+          <select id="font-size">
+            <option value="small">Small</option>
+
+            <option value="medium" selected>Medium</option>
+
+            <option value="large">Large</option>
+          </select>
+        </div>
+
+        <button id="save-appearance" class="primary-btn">
+          <i class="fa-solid fa-floppy-disk"></i>
+
+          Save Appearance
+        </button>
+      </section>
+
+      <!-- ==========================================
+                CHANGE PASSWORD
+        =========================================== -->
+
+      <section class="settings-card">
+        <div class="card-title">
+          <i class="fa-solid fa-lock"></i>
+
+          <h2>Change Password</h2>
+        </div>
+
+        <div class="password-form">
+          <div class="input-group">
+            <label>
+              <i class="fa-solid fa-key"></i>
+
+              Current Password
+            </label>
+
+            <input
+              type="password"
+              id="current-password"
+              placeholder="Enter current password"
+            />
+          </div>
+
+          <div class="input-group">
+            <label>
+              <i class="fa-solid fa-lock"></i>
+
+              New Password
+            </label>
+
+            <input
+              type="password"
+              id="new-password"
+              placeholder="Enter new password"
+            />
+          </div>
+
+          <div class="input-group">
+            <label>
+              <i class="fa-solid fa-lock"></i>
+
+              Confirm Password
+            </label>
+
+            <input
+              type="password"
+              id="confirm-password"
+              placeholder="Confirm new password"
+            />
+          </div>
+
+          <button id="change-password" class="primary-btn">
+            <i class="fa-solid fa-rotate"></i>
+
+            Update Password
+          </button>
+        </div>
+      </section>
+      <!-- ==========================================
+                SYSTEM INFORMATION
+        =========================================== -->
+
+      <section class="settings-card">
+        <div class="card-title">
+          <i class="fa-solid fa-circle-info"></i>
+
+          <h2>System Information</h2>
+        </div>
+
+        <div class="system-info">
+          <div class="info-item">
+            <span>System Version</span>
+            <strong>Version 2.0.0</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Database</span>
+            <strong>Supabase</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Developer</span>
+            <strong>ZERO ERROR COMPANY</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Last Updated</span>
+            <strong>July 2026</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+                ADMIN SETTINGS
+        =========================================== -->
+
+      <section id="admin-settings" class="settings-card">
+        <div class="card-title">
+          <i class="fa-solid fa-church"></i>
+
+          <h2>Church Information</h2>
+        </div>
+
+        <div class="input-group">
+          <label>Church Name</label>
+
+          <input
+            type="text"
+            id="church-name"
+            value="Victory International Church"
+          />
+        </div>
+
+        <div class="input-group">
+          <label>Church Email</label>
+
+          <input type="email" id="church-email" />
+        </div>
+
+        <div class="input-group">
+          <label>Church Phone</label>
+
+          <input type="text" id="church-phone" />
+        </div>
+
+        <div class="input-group">
+          <label>Church Address</label>
+
+          <textarea id="church-address" rows="4"></textarea>
+        </div>
+
+        <button id="save-church-info" class="primary-btn">
+          <i class="fa-solid fa-floppy-disk"></i>
+
+          Save Church Information
+        </button>
+      </section>
+
+      <!-- ==========================================
+                  SECURITY
+        =========================================== -->
+
+      <section id="security-settings" class="settings-card">
+        <div class="card-title">
+          <i class="fa-solid fa-shield-halved"></i>
+
+          <h2>Security</h2>
+        </div>
+
+        <div class="security-buttons">
+          <button id="backup-system">
+            <i class="fa-solid fa-database"></i>
+
+            Backup Database
+          </button>
+
+          <button id="reset-passwords">
+            <i class="fa-solid fa-key"></i>
+
+            Reset User Password
+          </button>
+
+          <button id="view-logins">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            Login History
+          </button>
+
+          <button id="manage-users">
+            <i class="fa-solid fa-users-gear"></i>
+
+            Manage Users
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================
+                JAVASCRIPT
+    =========================================== -->
 
     <script type="module" src="js/settings.js"></script>
+
+    <script type="module" src="js/logout.js"></script>
   </body>
 </html>

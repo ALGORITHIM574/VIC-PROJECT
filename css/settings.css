@@ -1,0 +1,546 @@
+/* =====================================================
+   SETTINGS PAGE
+===================================================== */
+
+.settings-container {
+  width: 92%;
+  max-width: 1300px;
+  margin: 40px auto;
+  padding-bottom: 50px;
+}
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.page-header {
+  margin-bottom: 35px;
+}
+
+.page-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 34px;
+  color: #1d4ed8;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* =====================================================
+   SETTINGS CARD
+===================================================== */
+
+.settings-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  transition: 0.3s ease;
+}
+
+.settings-card:hover {
+  transform: translateY(-3px);
+}
+
+/* =====================================================
+   CARD TITLE
+===================================================== */
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.card-title i {
+  font-size: 26px;
+  color: #2563eb;
+}
+
+.card-title h2 {
+  font-size: 24px;
+  color: #1e293b;
+}
+
+/* =====================================================
+   PROFILE SECTION
+===================================================== */
+
+.profile-section {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* =====================================================
+   PROFILE PHOTO
+===================================================== */
+
+.profile-photo {
+  width: 260px;
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #2563eb;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+.upload-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #2563eb;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.upload-btn:hover {
+  background: #1d4ed8;
+}
+
+.upload-btn i {
+  margin-right: 8px;
+}
+
+/* =====================================================
+   PROFILE FORM
+===================================================== */
+
+.profile-form {
+  flex: 1;
+}
+
+/* =====================================================
+   INPUT GROUP
+===================================================== */
+
+.input-group {
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.input-group label i {
+  margin-right: 8px;
+  color: #2563eb;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+  background: #fff;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.primary-btn i {
+  font-size: 15px;
+}
+/* =====================================================
+   SETTING ROW
+===================================================== */
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 18px 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+}
+
+.setting-row h4 {
+  font-size: 17px;
+  color: #1e293b;
+  margin-bottom: 5px;
+}
+
+.setting-row p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.setting-row select {
+  min-width: 180px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.setting-row select:focus {
+  border-color: #2563eb;
+}
+
+/* =====================================================
+   TOGGLE SWITCH
+===================================================== */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background: #cbd5e1;
+  transition: 0.35s;
+  border-radius: 30px;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.35s;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.switch input:checked + .slider {
+  background: #2563eb;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(28px);
+}
+
+/* =====================================================
+   PASSWORD FORM
+===================================================== */
+
+.password-form {
+  max-width: 700px;
+}
+
+/* =====================================================
+   SYSTEM INFO
+===================================================== */
+
+.system-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.info-item {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 20px;
+  border-left: 5px solid #2563eb;
+}
+
+.info-item span {
+  display: block;
+  color: #64748b;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.info-item strong {
+  color: #1e293b;
+  font-size: 17px;
+}
+
+/* =====================================================
+   SECURITY BUTTONS
+===================================================== */
+
+.security-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.security-buttons button {
+  border: none;
+  padding: 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s;
+  color: white;
+}
+
+.security-buttons button i {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+#backup-system {
+  background: #2563eb;
+}
+
+#reset-passwords {
+  background: #ea580c;
+}
+
+#view-logins {
+  background: #0891b2;
+}
+
+#manage-users {
+  background: #15803d;
+}
+
+.security-buttons button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* =====================================================
+   ADMIN PANELS
+===================================================== */
+
+#admin-settings,
+#security-settings {
+  display: none;
+}
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 1200px) {
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 100%;
+  }
+
+  .profile-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .settings-container {
+    width: 95%;
+    margin: 25px auto;
+  }
+
+  .settings-card {
+    padding: 25px;
+  }
+
+  .page-header h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    text-align: center;
+  }
+
+  .page-header h1 {
+    justify-content: center;
+    font-size: 28px;
+  }
+
+  .card-title {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .setting-row select {
+    width: 100%;
+  }
+
+  .switch {
+    align-self: flex-end;
+  }
+
+  .system-info {
+    grid-template-columns: 1fr;
+  }
+
+  .security-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .primary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .settings-container {
+    width: 96%;
+  }
+
+  .settings-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .profile-photo img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .upload-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .card-title h2 {
+    font-size: 20px;
+  }
+
+  .input-group input,
+  .input-group textarea,
+  .input-group select {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  .setting-row h4 {
+    font-size: 16px;
+  }
+
+  .setting-row p {
+    font-size: 13px;
+  }
+}
+
+/* =====================================================
+   SMALL ANIMATIONS
+===================================================== */
+
+.settings-card,
+.primary-btn,
+.security-buttons button,
+.upload-btn,
+.switch,
+input,
+select,
+textarea {
+  transition: all 0.3s ease;
+}
+
+.settings-card:hover {
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.1);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  transform: translateY(-1px);
+}
+
+.security-buttons button:active,
+.primary-btn:active {
+  transform: scale(0.97);
+}
+
+/* =====================================================
+   HIDE FILE INPUT
+===================================================== */
+
+#profile-upload {
+  display: none;
+}
+
+/* =====================================================
+   ADMIN SECTIONS
+===================================================== */
+
+.admin-only {
+  display: none;
+}

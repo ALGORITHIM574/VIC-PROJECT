@@ -38,14 +38,17 @@ async function loadProfile() {
 
   const { data, error } = await supabase
     .from("members")
-    .select("phone")
+    .select("phone, profile_picture")
     .eq("id", profile.id)
     .single();
 
   if (!error && data) {
     phone.value = data.phone || "";
-  }
 
+    if (data.profile_picture) {
+      profileImage.src = data.profile_picture;
+    }
+  }
   // Admin Only
 
   if (profile.role === "admin") {
@@ -218,20 +221,72 @@ changePassword.addEventListener("click", async () => {
 });
 
 // ==========================================
-// PROFILE IMAGE PREVIEW
+// PROFILE PICTURE
 // ==========================================
 
 const profileUpload = document.getElementById("profile-upload");
 const profileImage = document.getElementById("profile-image");
 
-profileUpload.addEventListener("change", () => {
+profileUpload.addEventListener("change", async () => {
   const file = profileUpload.files[0];
 
   if (!file) return;
 
-  profileImage.src = URL.createObjectURL(file);
-});
+  // Preview immediately
 
+  profileImage.src = URL.createObjectURL(file);
+
+  // File name
+
+  const fileName = `${profile.id}-${Date.now()}.${file.name.split(".").pop()}`;
+  //DEBUG
+  console.log("PROFILE ID:", profile.id);
+
+  console.log("SELECTED FILE:", file);
+
+  console.log("FILE NAME:", fileName);
+
+  // Upload to Storage
+  
+
+  console.log("STARTING UPLOAD...");
+
+  const { data: uploadData, error } = await supabase.storage
+    .from("profile-images")
+    .upload(fileName, file);
+
+  console.log("UPLOAD FINISHED");
+  console.log(uploadData);
+  console.log(error);
+  // Get public URL
+
+  const { data } = supabase.storage
+    .from("profile-images")
+    .getPublicUrl(fileName);
+
+  const imageUrl = data.publicUrl;
+
+  // Save URL into members table
+console.log("SAVING URL TO DATABASE...");
+  const { error: updateError } = await supabase
+    .from("members")
+    .update({
+      profile_picture: imageUrl,
+    })
+    .eq("id", profile.id);
+
+  if (updateError) {
+    console.error("DATABASE ERROR:", updateError);
+
+    alert(updateError.message);
+
+    return;
+  }
+
+  profileImage.src = imageUrl;
+
+  alert("Profile picture updated successfully.");
+});
 // ==========================================
 // CHURCH INFORMATION
 // ==========================================

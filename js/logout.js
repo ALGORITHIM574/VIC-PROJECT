@@ -2,11 +2,13 @@ import { supabase } from "./supabase.js";
 
 const logout = document.getElementById("logout");
 
-logout.addEventListener("click", async () => {
-  await supabase.auth.signOut();
+if (logout) {
+  logout.addEventListener("click", async () => {
+    await supabase.auth.signOut();
 
-  window.location.href = "login.html";
-});
+    window.location.href = "login.html";
+  });
+}
 //THIS IS FOR THE DASHBORAD UPDATES
 
 const totalMonthEl = document.getElementById("total-month");
@@ -91,4 +93,6 @@ async function loadCards() {
   totalSundaysEl.textContent = sundayCount;
 }
 
-loadCards();
+if (totalMonthEl && totalMembersEl && totalSundaysEl && highestContributorEl) {
+  loadCards();
+}
